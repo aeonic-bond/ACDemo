@@ -17,8 +17,8 @@ function sortRequests(requests: ProcessedRequest[], sortBy: SortBy): ProcessedRe
   return [...requests].sort((a, b) => {
     switch (sortBy) {
       case 'urgency': {
-        const weight = { incomplete: 0, partial: 0, complete: 1 }
-        const wDiff = weight[a.completionState] - weight[b.completionState]
+        const sink = (r: ProcessedRequest) => r.responsibility === 'terminal' ? 1 : 0
+        const wDiff = sink(a) - sink(b)
         if (wDiff !== 0) return wDiff
         if (!a.due_at && !b.due_at) return 0
         if (!a.due_at) return 1
