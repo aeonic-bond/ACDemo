@@ -1,0 +1,18 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-500);
+}
+
+.lead {
+  font-size: var(--font-platform-caption-size);
+  font-weight: var(--font-platform-caption-weight);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.leadName {
+  font-weight: var(--font-platform-chip-weight);
+  text-decoration: underline;
+}

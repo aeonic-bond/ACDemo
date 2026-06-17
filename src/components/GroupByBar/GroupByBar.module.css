@@ -1,0 +1,19 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-400);
+}
+
+.label {
+  font-size: var(--font-platform-caption-size);
+  font-weight: var(--font-platform-caption-weight);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.chips {
+  display: flex;
+  align-items: center;
+  gap: var(--space-400);
+}

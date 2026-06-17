@@ -1,0 +1,21 @@
+.chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-300) var(--space-400);
+  border-radius: var(--radius-900);
+  border: 1px solid var(--color-platform-accent);
+  background: var(--color-grey-100);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-platform-chip-size);
+  font-weight: var(--font-platform-chip-weight);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.active {
+  background: var(--color-platform-accent);
+  border-color: var(--color-platform-accent);
+  color: var(--color-white);
+}

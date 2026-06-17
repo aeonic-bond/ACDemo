@@ -1,0 +1,50 @@
+.chip {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  border-radius: var(--radius-900);
+  border: 1px solid var(--color-platform-accent);
+  background: var(--color-grey-100);
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  font-family: var(--font-family-sans);
+  transition: border-color 120ms ease;
+}
+
+.avatarSpacing {
+  margin: var(--space-200);
+}
+
+.name {
+  font-size: var(--font-platform-chip-size);
+  font-weight: var(--font-platform-chip-weight);
+  color: inherit;
+  white-space: nowrap;
+  padding: var(--space-200);
+  transition: color 120ms ease;
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  padding: 0 var(--space-300);
+  min-width: 31px;
+  font-size: var(--font-platform-chip-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-tertiary);
+}
+
+.chip.active {
+  background: var(--color-platform-accent);
+  color: var(--color-white);
+}
+
+.chip.active .count {
+  background: transparent;
+  color: inherit;
+}
+

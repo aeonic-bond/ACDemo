@@ -1,0 +1,50 @@
+.toggle {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-200);
+  align-items: center;
+  width: fit-content;
+}
+
+.iconRow {
+  display: flex;
+  gap: var(--space-200);
+  align-items: center;
+}
+
+.iconButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-disabled);
+  flex-shrink: 0;
+  transition: color 150ms ease;
+}
+
+.iconButton.active {
+  color: var(--color-platform-accent);
+}
+
+.rail {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: var(--color-grey-200);
+  border-radius: var(--radius-100);
+}
+
+.indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background: var(--color-platform-accent);
+  border-radius: var(--radius-100);
+  transition: transform 150ms ease;
+}

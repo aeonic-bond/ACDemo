@@ -1,0 +1,39 @@
+.indicator {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-200);
+  border: 3px solid transparent;
+  flex-shrink: 0;
+}
+
+/* --- Category colours --- */
+/* TODO: move to component tokens in component.css once that layer is built */
+
+.police {
+  --icon-color: var(--color-blue-500);
+}
+
+.medical {
+  --icon-color: var(--color-teal-400);
+}
+
+.insurance {
+  --icon-color: var(--color-indigo-400);
+}
+
+/* --- Completion states --- */
+
+.incomplete {
+  background: transparent;
+  border-color: var(--icon-color);
+}
+
+.partial {
+  background: radial-gradient(circle at 0% 0%, var(--icon-color) 72%, transparent 72%);
+  border-color: var(--icon-color);
+}
+
+.complete {
+  background: var(--icon-color);
+  border-color: var(--icon-color);
+}

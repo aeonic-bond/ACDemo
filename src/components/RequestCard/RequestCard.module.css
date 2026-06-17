@@ -1,0 +1,268 @@
+.card {
+  background: var(--color-grey-100);
+  border: 1px solid var(--color-grey-200);
+  border-radius: var(--radius-500);
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* --- Body --- */
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+  padding: var(--space-400);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-300);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--font-card-title-size);
+  font-weight: var(--font-card-title-weight);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.source {
+  font-size: var(--font-card-metadata-size);
+  font-weight: var(--font-card-body-weight);
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+/* --- Body content --- */
+
+.bodyContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+  flex: 1;
+  min-width: 0;
+}
+
+/* --- Activity Feed --- */
+
+.activityFeed {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-200);
+}
+
+.alertMessage {
+  background: var(--color-white);
+  border-radius: var(--radius-500);
+  padding: var(--space-300);
+}
+
+.alertMessage p {
+  font-size: var(--font-card-action-size);
+  font-weight: var(--font-card-action-weight);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.activityEntry {
+  background: var(--color-white);
+  border-radius: var(--radius-300);
+  padding: var(--space-300);
+  display: flex;
+  align-items: center;
+  gap: var(--space-400);
+}
+
+.originEntry {
+  display: flex;
+  align-items: center;
+  gap: var(--space-400);
+  padding: var(--space-200) var(--space-300);
+  margin-top: var(--space-200);
+  color: var(--color-text-disabled);
+  border-top: 1px dashed var(--color-grey-300);
+}
+
+.activityDate {
+  font-size: var(--font-card-date-size);
+  font-weight: var(--font-card-date-weight);
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.activityText {
+  font-size: var(--font-card-body-size);
+  color: var(--color-text-tertiary);
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+}
+
+/* --- Action center --- */
+
+.actionCenter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-200);
+}
+
+.actionBtn {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-card-action-size);
+  font-weight: var(--font-card-action-weight);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-platform-accent);
+  border-radius: var(--radius-900);
+  background: transparent;
+  padding: var(--space-100) var(--space-300);
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.actionDots {
+  font-family: var(--font-family-sans);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-900);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--color-text-tertiary);
+}
+
+/* --- Footer --- */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-300);
+  background: inherit;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: var(--font-family-sans);
+}
+
+.footerLeading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-300);
+}
+
+.footerAttention {
+  background: var(--color-grey-200);
+  border-top: 1px solid var(--color-grey-300);
+}
+
+.dueDate {
+  font-size: var(--font-card-date-size);
+  font-weight: var(--font-card-date-weight);
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
+}
+
+
+.dueDateOverdue {
+  /* TODO: replace with --color-status-overdue-text once component.css is built */
+  color: var(--color-attention);
+  font-weight: var(--font-card-date-weight);
+}
+
+/* --- Footer trailing --- */
+
+.footerTrailing {
+  display: flex;
+  align-items: center;
+  gap: var(--space-200);
+  flex-shrink: 0;
+}
+
+.chevronWrap {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-text-primary);
+}
+
+.footerAttention .chevronWrap {
+  background: var(--color-attention);
+  color: var(--color-white);
+}
+
+/* --- Row layout --- */
+
+.cardRow {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.cardRow .body {
+  flex: 1;
+  min-width: 0;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.cardRow .header {
+  flex: 0 0 22%;
+  min-width: 200px;
+  align-self: flex-start;
+  padding-right: var(--space-400);
+}
+
+.cardRow .bodyContent {
+  align-self: center;
+}
+
+.cardRow .footer {
+  flex-direction: column;
+  align-items: flex-end;
+  align-self: stretch;
+  flex: 0 0 22%;
+  min-width: 200px;
+  min-height: 96px;
+  border-left: 1px solid var(--color-grey-300);
+  border-top: none;
+}
+
+.cardRow .footerLeading {
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.cardRow .footerLeading .dueDate {
+  text-align: right;
+}
+
+.cardRow .footer .footerTrailing {
+  justify-content: flex-end;
+  width: 100%;
+}

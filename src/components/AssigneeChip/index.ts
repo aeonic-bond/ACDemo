@@ -1,0 +1,1 @@
+export { AssigneeChip } from './AssigneeChip'

@@ -1,0 +1,15 @@
+.badge {
+  font-size: var(--font-card-action-size);
+  font-weight: var(--font-card-action-weight);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  border-radius: var(--radius-200);
+}
+
+.attention {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px var(--space-300);
+  background: var(--color-attention);
+  color: var(--color-white);
+}

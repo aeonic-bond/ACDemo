@@ -1,0 +1,28 @@
+.workspace {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--color-platform-background);
+}
+
+.assigneeBar {
+  padding: var(--space-300) var(--space-500);
+}
+
+.controlsBar {
+  padding: var(--space-300) var(--space-500);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.viewControls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-500);
+}
+
+.board {
+  padding: var(--space-400) var(--space-700);
+  background: var(--color-white);
+}

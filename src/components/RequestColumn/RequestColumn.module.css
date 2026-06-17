@@ -1,0 +1,28 @@
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  background: var(--color-white);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-300);
+}
+
+.label {
+  font-size: var(--font-platform-section-heading-size);
+  font-weight: var(--font-platform-section-heading-weight);
+  color: var(--color-text-primary);
+}
+
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-400);
+  padding: var(--space-300);
+}

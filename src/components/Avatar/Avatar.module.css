@@ -1,0 +1,17 @@
+.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-900);
+  background: var(--color-grey-300);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-body-200);
+  font-weight: var(--font-weight-semibold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.light {
+  background: var(--color-white);
+}

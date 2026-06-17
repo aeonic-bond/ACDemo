@@ -1,0 +1,68 @@
+.wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--space-200);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-family-sans);
+}
+
+.label {
+  font-size: var(--font-platform-label-size);
+  font-weight: var(--font-platform-label-weight);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + var(--space-200));
+  background: var(--color-white);
+  border: 1px solid var(--color-grey-200);
+  border-radius: var(--radius-300);
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  min-width: 148px;
+  z-index: 10;
+  padding: var(--space-200) 0;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: var(--space-200) var(--space-400);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-platform-label-size);
+  font-weight: var(--font-platform-label-weight);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.option:hover {
+  background: var(--color-grey-100);
+}
+
+.optionActive {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-platform-accent);
+}
+
+.check {
+  color: var(--color-platform-accent);
+  font-size: var(--font-platform-label-size);
+  flex-shrink: 0;
+  margin-left: var(--space-400);
+}

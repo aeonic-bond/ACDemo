@@ -1,0 +1,89 @@
+@import './primitives.css';
+
+/* ============================================================
+   Default surface (light)
+   ============================================================ */
+
+:root {
+  /* #region Color */
+
+  /* --- Text --- */
+  --color-text-primary: var(--color-grey-900);   /* ~16:1 — AAA */
+  --color-text-secondary: var(--color-grey-700); /* ~5.7:1 — AA */
+  --color-text-tertiary: var(--color-grey-600);  /* ~4.5:1 — AA borderline */
+  --color-text-disabled: var(--color-grey-400);  /* intentionally low contrast */
+
+  /* --- Status --- */
+  --color-attention: var(--color-red-600);
+
+  /* --- Platform --- */
+  --color-platform-accent:      var(--color-blue-grey-700);
+  --color-platform-background:  var(--color-grey-100);
+
+  /* #endregion */
+
+  /* #region Space */
+
+  /* #endregion */
+
+  /* #region Radius */
+
+  /* #endregion */
+
+  /* #region Typography */
+
+  /* --- Font Family --- */
+  --font-family-sans: 'Geist', system-ui, sans-serif;
+
+  /* --- Platform --- */
+  --font-platform-page-title-size:        var(--font-size-display-600); /* 28px — case name */
+  --font-platform-page-title-weight:      var(--font-weight-bold);
+
+  --font-platform-section-heading-size:   var(--font-size-body-500);    /* 13px — column headers */
+  --font-platform-section-heading-weight: var(--font-weight-semibold);
+
+  --font-platform-label-size:             var(--font-size-body-400);    /* 12px — sort labels */
+  --font-platform-label-weight:           var(--font-weight-medium);
+
+  --font-platform-caption-size:           var(--font-size-body-300);    /* 11px — Group By: */
+  --font-platform-caption-weight:         var(--font-weight-regular);
+
+  --font-platform-chip-size:              var(--font-size-body-500);    /* 13px — filter chips */
+  --font-platform-chip-weight:            var(--font-weight-medium);
+
+  /* --- Card --- */
+  --font-card-title-size:        var(--font-size-body-500);   
+  --font-card-title-weight:      var(--font-weight-semibold);
+
+  --font-card-body-size:         var(--font-size-body-400);  
+  --font-card-body-weight:       var(--font-weight-regular);
+
+  --font-card-metadata-size:     var(--font-size-body-300);   
+  --font-card-metadata-weight:   var(--font-weight-regular);
+
+  --font-card-date-size:         var(--font-size-body-200);
+  --font-card-date-weight:       var(--font-weight-semibold);
+
+  --font-card-action-size:       var(--font-size-body-300);   
+  --font-card-action-weight:     var(--font-weight-semibold);
+
+  /* #endregion */
+}
+
+/* ============================================================
+   Dark surface (scoped via data-surface="dark")
+   Apply to any element that has a dark background.
+   Child components consume the same token names — no changes needed.
+   ============================================================ */
+
+[data-surface="dark"] {
+  /* #region Color */
+
+  /* --- Text --- */
+  --color-text-primary: var(--color-white);      /* on dark bg — AAA */
+  --color-text-secondary: var(--color-grey-200); /* ~10:1 — AAA */
+  --color-text-tertiary: var(--color-grey-400);  /* ~6.5:1 — AA */
+  --color-text-disabled: var(--color-grey-600);  /* intentionally low contrast */
+
+  /* #endregion */
+}
