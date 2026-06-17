@@ -16,11 +16,13 @@ function sortRequests(requests: ProcessedRequest[], sortBy: SortBy): ProcessedRe
   return [...requests].sort((a, b) => {
     switch (sortBy) {
       case 'urgency': {
+        const weight = { incomplete: 0, partial: 0, complete: 1 }
+        const wDiff = weight[a.completionState] - weight[b.completionState]
+        if (wDiff !== 0) return wDiff
         if (!a.due_at && !b.due_at) return 0
         if (!a.due_at) return 1
         if (!b.due_at) return -1
-        const now = Date.now()
-        return (new Date(a.due_at).getTime() - now) - (new Date(b.due_at).getTime() - now)
+        return new Date(a.due_at).getTime() - new Date(b.due_at).getTime()
       }
       case 'document_type':
         return a.document_type.localeCompare(b.document_type)

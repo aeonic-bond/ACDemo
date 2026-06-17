@@ -49,6 +49,9 @@ export function useFlipMove(
 
   const els = useRef(new Map<string, HTMLElement>())
   const prevRects = useRef(new Map<string, DOMRect>())
+  // --- FLIP ANIMATION ---
+  const pendingCleanups = useRef(new Map<string, () => void>())
+  // --- END FLIP ANIMATION ---
 
   const setRef = useCallback(
     (id: string) => (el: HTMLElement | null) => {
@@ -59,6 +62,12 @@ export function useFlipMove(
   )
 
   useLayoutEffect(() => {
+    // --- FLIP ANIMATION ---
+    // Cancel any orphaned transitionend listeners from a prior in-flight animation.
+    pendingCleanups.current.forEach(fn => fn())
+    pendingCleanups.current.clear()
+    // --- END FLIP ANIMATION ---
+
     const prefersReduced =
       typeof window !== 'undefined' &&
       window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
@@ -125,14 +134,23 @@ export function useFlipMove(
             el.style.zIndex = ''
             el.style.willChange = ''
             el.removeEventListener('transitionend', cleanup)
+            pendingCleanups.current.delete(id)
           }
           el.addEventListener('transitionend', cleanup)
+          pendingCleanups.current.set(id, () => el.removeEventListener('transitionend', cleanup))
         })
       })
     }
 
     // Store this commit's true layout as "First" for the next move.
     prevRects.current = last
+
+    // --- FLIP ANIMATION ---
+    return () => {
+      pendingCleanups.current.forEach(fn => fn())
+      pendingCleanups.current.clear()
+    }
+    // --- END FLIP ANIMATION ---
   }, [orderKey, movedId, opts.disabled])
 
   return setRef

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import type { ProcessedRequest, RawRequest, RequestStatus } from '../../types/request'
 import { Avatar } from '../Avatar'
 import { ChevronIcon, DotsHorizontalIcon } from '../icons'
@@ -79,7 +79,7 @@ function actionForStatus(status: RequestStatus): { label: string; targetStatus: 
 export function RequestCard({ request, layout = 'card', onUpdate, setCardRef }: Props) {
   const [isExpanded, setIsExpanded] = useState(false)
   // --- FLIP ANIMATION ---
-  const cardRef = setCardRef?.(request.id)
+  const cardRef = useMemo(() => setCardRef?.(request.id), [setCardRef, request.id])
   // --- END FLIP ANIMATION ---
   const activities = request.activity ?? []
   const visibleActivities = isExpanded
@@ -133,8 +133,8 @@ export function RequestCard({ request, layout = 'card', onUpdate, setCardRef }: 
                 <p>{request.pages_received} of {request.pages_expected} pages received</p>
               </div>
             )}
-            {visibleActivities.map((entry, i) => (
-              <div key={i} className={styles.activityEntry}>
+            {visibleActivities.map((entry) => (
+              <div key={entry.at + entry.text} className={styles.activityEntry}>
                 <span className={styles.activityDate}>{formatActivityDate(entry.at)}</span>
                 <p className={styles.activityText}>{entry.text}</p>
               </div>

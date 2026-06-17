@@ -41,18 +41,17 @@ export function SortDropdown({ value, onChange }: Props) {
         className={styles.trigger}
         onClick={() => setIsOpen(o => !o)}
         aria-expanded={isOpen}
-        aria-haspopup="listbox"
+        aria-haspopup="true"
       >
         <span className={styles.label}>Sort: {selectedLabel}</span>
         <ChevronIcon direction={isOpen ? 'up' : 'down'} size={10} />
       </button>
       {isOpen && (
-        <div className={styles.menu} role="listbox">
+        <div className={styles.menu}>
           {SORT_OPTIONS.map(opt => (
             <button
               key={opt.value}
-              role="option"
-              aria-selected={opt.value === value}
+              aria-pressed={opt.value === value}
               className={`${styles.option} ${opt.value === value ? styles.optionActive : ''}`}
               onClick={() => handleSelect(opt.value)}
             >

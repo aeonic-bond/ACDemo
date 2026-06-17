@@ -232,8 +232,8 @@
 }
 
 .cardRow .header {
-  flex: 0 0 22%;
-  min-width: 200px;
+  flex: 0 0 20%;
+  min-width: 160px;
   align-self: flex-start;
   padding-right: var(--space-400);
 }
@@ -246,8 +246,8 @@
   flex-direction: column;
   align-items: flex-end;
   align-self: stretch;
-  flex: 0 0 22%;
-  min-width: 200px;
+  flex: 0 0 15%;
+  min-width: 140px;
   min-height: 96px;
   border-left: 1px solid var(--color-grey-300);
   border-top: none;
