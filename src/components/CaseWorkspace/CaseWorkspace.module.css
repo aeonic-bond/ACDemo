@@ -22,6 +22,34 @@
   gap: var(--space-500);
 }
 
+.filtersBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-200);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: default;
+  position: relative;
+}
+
+.filtersBtn:hover::after {
+  content: 'Placeholder';
+  position: absolute;
+  top: calc(100% + var(--space-200));
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-grey-900);
+  color: var(--color-white);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-platform-caption-size);
+  font-weight: var(--font-platform-caption-weight);
+  white-space: nowrap;
+  padding: var(--space-100) var(--space-300);
+  border-radius: var(--radius-200);
+  pointer-events: none;
+}
+
 .board {
   padding: var(--space-400) var(--space-700);
   background: var(--color-white);

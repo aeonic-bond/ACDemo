@@ -1,4 +1,5 @@
 export { ChevronIcon } from './ChevronIcon'
+export { FilterIcon } from './FilterIcon'
 export { DotsHorizontalIcon } from './DotsHorizontalIcon'
 export { GridIcon } from './GridIcon'
 export { ListIcon } from './ListIcon'

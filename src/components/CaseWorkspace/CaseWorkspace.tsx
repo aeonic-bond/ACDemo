@@ -7,6 +7,7 @@ import { AssigneeFilterBar } from '../AssigneeFilterBar'
 import { GroupByBar } from '../GroupByBar'
 import { ViewToggle } from '../ViewToggle'
 import { SortDropdown } from '../SortDropdown'
+import { FilterIcon } from '../icons'
 import { CaseBoard, GROUP_BY_OPTIONS } from '../CaseBoard'
 import { deriveAssignees } from '../../lib/deriveAssignees'
 import { reprocessRequest } from '../../lib/transformCase'
@@ -90,6 +91,10 @@ export function CaseWorkspace({ data }: Props) {
           onChange={v => setGroupBy(v as GroupBy)}
         />
         <div className={styles.viewControls}>
+          <button className={styles.filtersBtn} disabled>
+            <span>Filters</span>
+            <FilterIcon size={12} />
+          </button>
           <SortDropdown value={sortBy} onChange={setSortBy} />
           <ViewToggle value={viewMode} onChange={setViewMode} />
         </div>
